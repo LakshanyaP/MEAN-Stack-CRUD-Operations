@@ -1,0 +1,67 @@
+h2,h3{
+    color:darkslategray;
+}
+  
+body{
+    background-color: rgb(230, 255, 230);
+}
+
+nav a{
+    font-family:"Sofia", sans-serif;
+}
+
+nav a:hover{
+    font-size: 125%;
+}
+  
+h2.oblique{
+    font-style: oblique;
+}
+  
+#side{
+    font-family:'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+  
+table{
+    border-collapse: collapse;
+}
+  
+a.email:hover{
+    color:tomato;
+}
+  
+a.int_link{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+  
+a:visited{
+    color:rgb(6, 70, 40);
+}
+  
+a:active{
+    color:rgb(69, 14, 121);;
+}
+  
+#cost_table th{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    background-color: #043006;
+    color: white;
+    font-weight: lighter;
+}
+
+.header{
+    align-items: center;
+}
+  
+span.vertical{
+      writing-mode: vertical-rl; 
+      padding-bottom: 10px;
+}
+  
+  

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-image: url("Media/background3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .box1{
+                background-color: 		#BEBEBE;
+                margin-left: 400px;
+                margin-top: 50px;
+                border-radius: 20px;
+                padding-top: 50px;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-bottom: 50px;
+                height: 300px;
+                width: 600px;
+            }
+            .box2, .box3{
+            margin-left: 100px;
+            display: inline;
+            }
+            label, button, p, #submit, #bg, a{
+                font-family: Sofia;
+            }
+            button, #submit, #bg{
+                border-radius: 5px;
+                border-color: rgb(208, 247, 231);
+                font-size: 20px;
+            }
+        </style>
+        <title>Register with us</title>
+        <meta charset = "UTF-8">
+        <meta name = "description" content = "New to the city and looking for a place to stay? We've got you!">
+        <meta name = "keywords" content = "Hostel,Living,Stay,Residence">
+        <meta name = "author" content = "Lakshanya">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <script src = "form_lab4.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    </head> 
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+        <!-- <nav class="{{active}}" ng-click="$event.preventDefault()">
+            <a href="#/!" class="register" ng-click="active='Registration'">Register</a> &mid;
+            <a href="#!view" class="view" ng-click="active='Customers'">View Table</a> &mid;
+            <a href="#!update" class="update" ng-click="active='Updation'">Update Table</a> &mid;
+        </nav> -->
+        <nav></nav>
+            <a href="#/!">Register</a> &mid;
+            <a href="#!view">View Table</a> &mid;
+            <a href="#!update">Update Table</a> &mid;
+            <a href="#!delete">Delete</a> &mid;
+        </nav>
+        <p align="right">{{time}}</p>
+        <!-- <h1 align = "center" style= "color:black; font-family:Sofia; font-weight: lighter;" ng-show="active">{{active}}</h1> -->
+        <!-- <p ng-show="active">You chose <b>{{active}}</b></p> -->
+        <div ng-view></div>
+        <script>
+            function validate_upd()
+            {
+                alert('Inside udpate func!');
+                var id = document.getElementById("id").value;
+                var email = document.getElementById("email").value;
+                var pwd = document.getElementById("password").value;
+                var phoneNumber = document.getElementById("phone").value;
+
+                var phoneRGEX = /^[1-9]{1}[0-9]{9}$/;
+                var pwdRGEX = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-z0-9!@#$%^&*]{8,16}$/;
+                var emailRGEX = /^[A-Za-z0-9._]{3,}@[A-Za-z]{3,}[.]{1}[.A-Za-z]{2,}$/;
+
+                var idResult = phoneRGEX.test(id);
+                var emailResult = emailRGEX.test(email);
+                var pwdResult = pwdRGEX.test(pwd);
+                var phoneResult = phoneRGEX.test(phoneNumber);
+
+                var no_entry1 = true;
+
+                if(idResult == false)
+                {
+                    no_entry1 = false;
+                    alert('Please enter a valid number to be updated !');
+                }
+                if(emailResult == false)
+                {
+                    no_entry1 = false;
+                    alert('Please enter a valid mail id !');
+                }
+                if(pwdResult == false)
+                {
+                    no_entry1 = false;
+                    alert('Please enter a valid password !');
+                }
+                if(phoneResult == false)
+                {
+                    no_entry1 = false;
+                    alert('Please enter a valid phone number !');
+                }
+                return no_entry1;
+            }
+            var app = angular.module('myApp', ['ngRoute']);
+            
+            app.controller('myCtrl', function($scope, $timeout, $interval) {
+                $scope.head_two = "Welcome to Texta Living!";
+                $timeout(function () { $scope.head_two = "Please fill in all the boxes"; }, 2000);
+
+                $scope.time = new Date().toLocaleTimeString();
+                $interval(function () { $scope.time = new Date().toLocaleTimeString(); }, 1000);
+
+                $scope.bgChange = function()
+                {
+                    var str = bgControl.myFunc();
+                    document.body.style.backgroundImage = str;
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                }
+            });
+
+            app.config(function($routeProvider) {
+                $routeProvider
+                .when("/", { templateUrl : "register.html", controller  : 'RegController' })
+                // .when("/view", { templateUrl : "display_php.php", controller  : 'DispController' })
+                .when("/view", { templateUrl : "http://localhost:3000/view", controller : 'DispController' })
+                .when("/update", { templateUrl : "update.html", controller  : 'UpdController'  })
+                .when("/delete", { templateUrl : "delete.html", controller : 'DelController' });
+            });
+
+            app.controller('RegController', function($scope) {
+            $scope.message = 'Registration';
+            });
+
+            app.controller('DispController', function($scope) {
+            $scope.message = 'Customers';
+            });
+
+            app.controller('UpdController', function($scope) {
+            $scope.message = 'Updation';
+            });
+
+            app.controller('DelController', function($scope) {
+            $scope.message = 'Deletion';
+            });
+        </script>
+        <!-- <div ng-app="myApp" ng-controller="myCtrl">
+            <div>
+                <h2 align = "center" style="color:black; font-family:Sofia; font-weight: lighter;">{{head_two}}</h2>
+            </div>
+            <p align="right">{{time}}</p>
+            <div id = "box1" class = "box1">
+                1 <form name = "form1"  method = "POST" action="https://www.google.com/" onsubmit="validate();return false" > 1
+                2 <form name = "form1" method="POST" action="insert_php.php" onsubmit="return validate();">  2
+                <form name = "form1" method="POST" action="insert_php.php">
+                    <label for = "fname">First Name : </label>
+                    <input type = "text" name = "fname"  id = "fname" style = "width:160px" placeholder = "Mark" ng-model="fname" required/>
+                    &emsp;
+
+                    <label for = "lname">Last Name : </label>
+                    <input type = "text" name = "lname"  id = "lname" style = "width:160px" placeholder = "Sully" ng-model="lname" required/>
+                    <br><br>
+
+                    <label for="email" class="label">Enter Email : </label>
+                    <input type = "email" name = "email"  id = "email" style="width:160px" placeholder = "example123@mail.com" ng-model="email" required/>
+                    <br><br>
+
+                    <label for = "password">Enter Password : </label> 
+                    <input type = "password" name = "password" id = "password" style = "width:160px" ng-model="password" required/>  
+                    <br><br>
+
+                    <label for = "phone">Enter Mobile Number : </label>
+                    <input type = "tel" name = "phone" id = "phone" style = "width:160px" placeholder = "1234512345" ng-model="phone" required/>
+                    <br><br>
+
+                    <label for = "gender">Select Gender :</label>
+                    <input type = "radio" name = "gender" id = "gendermale" value = "male" ng-model="gender" required/>       
+                    <label for = "gendermale">Male</label>  
+                    <input type = "radio" name = "gender" id = "genderfemale" value = "female" ng-model="gender"/>  
+                    <label for = "genderfemale">Female</label> 
+                    <input type = "radio" name = "gender"  id = "genderother" value = "other"ng-model="gender" />  
+                    <label for = "genderother">Other</label> 
+                    <br><br>
+
+                    <label for = "city">Select City : </label>
+                    <select name = "city" id = "city" style = "width:160px" required>  
+                        <option value = "hyderabad">Hyderabad</option>  
+                        <option value = "chennai">Chennai</option>  
+                        <option value = "bangalore">Bangalore</option>  
+                        <option value = "mumbai">Mumbai</option>   
+                    </select>  
+                    <br><br>
+
+                    <div class = "box2">
+                        <button type = "reset">Reset</button>
+                    </div>
+
+                    <div class = "box3">
+                        <input id = "submit" type = "submit" value="Register">
+                    </div>
+                </form>
+                <p align = "right">
+                    <a href = "MyFourthWebPage.html">Back to Home</a>
+                </p>
+            </div>
+            3 <div>
+                <footer align = "right">
+                    <button id = "bg" type = "submit" onclick="change()" ng-click="bgChange()">Change Background</button> 
+                </footer>   
+            </div> 3
+            <div>
+                <br>
+                <form action="display_php.php" style="margin-left: 700px;">
+                    <button id = "view" type = "submit">View Table</button>
+                </form>
+                <br>    
+                <form action="update.html" style="margin-left: 690px;">
+                    <button id = "view" type = "submit">Update Table</button>
+                </form>
+            </div>
+        </div> -->
+        <!-- <script>
+                function change()
+                {
+                    /*var str1 = "Media/background";
+                    var str2 = String(Math.floor(Math.random() * 4) + 1);
+                    var str3 = ".jpg";
+                    var temp = str1.concat(str2);
+                    var str  = String(temp.concat(str3));*/
+                    document.body.style.backgroundImage = "url('Media/background4.jpg')";
+                    document.body.style.backgroundRepeat = "no-repeat";
+                    document.body.style.backgroundSize = "cover";
+                }
+        </script> -->
+       
+    </body>
+</html>

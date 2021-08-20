@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            /* body
+            {
+                background-image: url("Media/background3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            } */
+            .box1
+            {
+                background-color: #616161;
+                margin-left: 400px;
+                margin-top: 75px;
+                border-radius: 20px;
+                padding-top: 50px;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-bottom: 30px;
+                height: 100px;
+                width: 600px;
+                position: relative;
+            }
+            .box4, .box5{
+                display: inline;
+                margin-left: 150px;
+                font-family: Sofia;
+                font-size: 20px;
+            }
+            label
+            {
+                /* color: #FEEBEE; */
+                font-weight: lighter;
+            }
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <!-- <script src="form_lab4.js"></script> -->
+    </head>
+    <body>
+        <h1 align = 'center' style= 'color:black; font-family:Sofia; font-weight: lighter;'>{{message}}</h1>
+        <div class = "box1" ng-app="myApp">
+            <form method="POST" onsumbit="return validate_del();" action="http://localhost:3000/delete">
+                <label for="id">Enter the mobile number of the person to be deleted : </label>
+                <input type = "text" id="del_id" name = "id"  ng-model="id" required/>
+                <br><br>
+                <div class = "box4">
+                    <button type = "reset">Reset</button>
+                </div>
+                
+                <div class = "box5">
+                    <button id = "del" type = "submit">Delete</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

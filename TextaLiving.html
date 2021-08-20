@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .sticky{
+            position: sticky;
+            top: 0;
+            text-align: center;
+            background-color: rgb(108, 158, 133);
+            width: 100%; 
+            animation-name: sticky;
+            animation-duration: 5s;        
+        }
+        @keyframes sticky{
+            from {background-color: rgba(108, 158, 133, 0);}
+            to {background-color:rgb(108, 158, 133)}
+        }
+        .fixed{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-top: 5px;
+            padding-right: 10px;
+            text-align: center;
+            width: 270px;
+            height: 65px;
+            background-color: #e5ffe5;
+        }
+        .box1{
+            margin-left: 300px;
+            padding :7.5px;
+            width : 910px;
+            background-color: rgb(108, 158, 133) ;
+        }
+        .svg{
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+        @keyframes slidein{
+            from{
+                margin-left: 100%;
+                width: 300%;
+            }
+            to{
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        .frame{
+            height : 150px;
+            width : 400px;
+            border-style: dashed;
+            border-color: teal;
+            transition: width 1.5s, height 1.5s;
+            transition-timing-function: steps(3, end)
+        }
+        .frame:hover{
+            width: 500px;
+            height: 300px;
+            background-color: teal;
+        }
+    </style>
+    <title>Texta Living - Your home away from home!</title>
+    <meta charset = "UTF-8">
+    <meta name = "description" content = "New to the city and looking for a place to stay? We've got you!">
+    <meta name = "keywords" content = "Hostel,Living,Stay,Residence">
+    <meta name = "author" content = "Lakshanya">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "Fourth.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</script>
+<body>
+    <div class = "sticky">
+        <header>
+            <h1 style = "color:rgb(41, 61, 6); text-shadow: 1px 1px rgb(4, 43, 15); display: inline-block;">TEXTA LIVING</h1>
+        </header>
+    </div>
+    <nav style = "display: inline-block;">
+        <a class = "int_link" href = "#facilities">Facilities</a>
+        <a class = "int_link" href = "#categories">Categories</a> 
+        <a class = "int_link" href = "#cost">Cost</a>
+        <a class = "int_link" href = "MFoWP2.html">Register</a>
+    </nav>
+
+    <div class = "svg" style = "padding-left: 550px;">
+        <svg>
+            <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgb(5, 77, 47);stop-opacity:0.9" />
+                    <stop offset="100%" style="stop-color:rgb(1, 37, 25);stop-opacity:0.9" />
+                </linearGradient>
+            </defs>
+            <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad3)"/>
+            <text fill="#e5ffe5" font-size="25" font-family="Sofia" x="135" y="80">
+                Texta Living
+            </text>
+        </svg>
+    </div> 
+    <div>
+        <h2 class = "oblique">A little about us</h2>
+        <p style = "font-size: 18px;">You know, we've been there too. We too did move out of our hometowns, leaving behind everything that was ours. We too have felt lost in the noise of a new city.
+            That's why we created Texta Living - a place designed by people who've been in your shoes. From the thickness of the mattress to the foosball table in the common area, you'll feel that care in every nook and corner of the house.
+            And before you can say "I miss home", Texta Living will become your second one.
+        </p>
+        <br>
+    </div>
+    <div>
+        <a id = "facilities"></a>  
+        <h3 id = "side">Facilities we provide</h3>
+        <p>
+            <ul>
+                <li>Common Area</li>
+                <li>Indoor Gaming</li>
+                <li>24*7 Wifi</li>
+                <li>Laundry Service</li>
+                <li>Power Backup</li>
+                <li>Housekeeping</li>
+                <li>Round-the-clock Surveillance</li>
+            </ul>
+        </p>
+    </div>
+    <div class = "box1">
+        <img src = "Media/H1.jpg" height = "300px" width = "300px">
+        <img src = "Media/H2.jpg" height = "300px" width = "300px">
+        <img src = "Media/H3.jpg" height = "300px" width = "300px" usemap = "#snooker"><br>
+        <map name = "snooker">
+            <area shape = "rect" coords = "100,150,250,300" href = "https://en.wikipedia.org/wiki/Snooker">
+        </map>
+        <img src = "Media/H4.jpg" height = "300px" width = "300px">
+        <img src = "Media/H5.jpg" height = "300px" width = "300px">
+        <img src = "Media/H6.jpg" height = "300px" width = "300px">
+    </div>
+    <hr>
+    <div class = "frame">
+        <iframe src = "MFoWP1.html" align = "middle" style = "border:none;" height = "150" width = "400"></iframe>
+    </div>
+    <div style = "display:inline-block">
+        <a id = "categories"></a> 
+        <h3 id = "side">Room Categories</h3>
+        <ol style="font-size : 17px">
+            <li>Single Occupancy</li>
+            <ul>
+                <li>Shared Washroom</li>
+                <li>AC, Shared Washroom</li>
+                <li>AC, Attached Washroom</li>
+            </ul>
+            <br>
+            <li>Double Occupancy</li>
+            <ul>
+                <li>Shared Washroom</li>
+                <li>AC, Shared Washroom</li>
+                <li>AC, Attached Washroom</li>
+            </ul>
+        </ol>
+    </div>
+    <div style = "display: inline-block ;margin-left:800px;border: none; ">
+        <video width="400" height="225" controls autoplay style="border-style:groove">
+            <source src="Media/video.mp4" type ="video/mp4">
+            <source src="Media/video.ogg" type ="video/ogg">
+        </video>
+        <span style = "display: inline-block;" class = "vertical"> A glimpse of your life with us!</p>
+    </div> 
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.controller("CostCtrl", function ($scope) 
+        {
+            $scope.rooms = [
+                { city : "Hyderabad", Room_desc : [{ room_desc : "Single Occupancy without AC and Washroom", cost : 4500 },
+                { room_desc : "Double Occupancy without AC and Washroom", cost : 2750 },
+                { room_desc : "Single Occupancy with only AC", cost : 6500 },
+                { room_desc : "Double Occupancy with only AC", cost : 3250 },
+                { room_desc : "Single Occupancy with AC and Washroom", cost : 9500 },
+                { room_desc : "Double Occupancy with AC and Washroom", cost : 4750 }]},
+
+                { city : "Bangalore", Room_desc : [{ room_desc : "Single Occupancy without AC and Washroom", cost : 6000 },
+                { room_desc : "Double Occupancy without AC and Washroom", cost : 3000 },
+                { room_desc : "Single Occupancy with only AC", cost : 8000 },
+                { room_desc : "Double Occupancy with only AC", cost : 4000 },
+                { room_desc : "Single Occupancy with AC and Washroom", cost : 11000 },
+                { room_desc : "Double Occupancy with AC and Washroom", cost : 5500 }]},
+
+                { city : "Chennai", Room_desc : [{ room_desc : "Single Occupancy without AC and Washroom", cost : 4000 },
+                {room_desc : "Double Occupancy without AC and Washroom", cost : 200 },
+                { room_desc : "Single Occupancy with only AC", cost : 7000 },
+                {  room_desc : "Double Occupancy with only AC", cost : 3500 },
+                {  room_desc : "Single Occupancy with AC and Washroom", cost : 9000 },
+                {  room_desc : "Double Occupancy with AC and Washroom", cost : 4500 }]},
+
+                { city : "Mumbai", Room_desc : [{ room_desc : "Single Occupancy without AC and Washroom", cost : 5000 },
+                { room_desc : "Double Occupancy without AC and Washroom", cost : 2500 },
+                { room_desc : "Single Occupancy with only AC", cost : 7500 },
+                { room_desc : "Double Occupancy with only AC", cost : 3750 },
+                { room_desc : "Single Occupancy with AC and Washroom", cost : 10000 },
+                { room_desc : "Double Occupancy with AC and Washroom", cost : 5000 }]}
+            ];
+        });
+        </script>
+
+<div ng-app="myApp" ng-controller="CostCtrl">
+    <a id = "cost"></a> 
+    <h3 id = "side" align = "center">Cost of Living for Each Room Type</h3>
+    <p align="center">Search City : <input type="text" ng-model="test.city"></p>
+    <!-- <p align="center">Search Room Description : <input type="text" ng-model="test.Room_desc.room_desc"></p> -->
+    <table id = "cost_table" align = "center" border = "1">
+        <tr>
+            <th>City</th>
+            <th>Room Description</th>
+            <th>Cost of living (Rs/month)</th>
+        </tr>
+    <!--
+        <tr>
+            <td rowspan="6" style="padding: 5px;" align="center">Hyderabad</td>
+            <td>Single Occupancy without AC and Washroom</td>
+            <td align = "center"> 5000/-</td>
+        </tr>
+        <tr>
+            <td>Double Occupancy without AC and Washroom</td>
+            <td align = "center"> 2500/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with only AC</td>
+            <td align = "center"> 7500/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with only AC</td>
+            <td align = "center"> 3750/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with AC and Washroom</td>
+            <td align = "center"> 10000/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with AC and Washroom</td>
+            <td align = "center"> 5000/-</td>       
+        </tr>
+
+        <tr>
+            <td rowspan="6" style="padding: 5px;" align="center">Bangalore</td>
+            <td>Single Occupancy without AC and Washroom</td>
+            <td align = "center"> 5000/-</td>
+        </tr>
+        <tr>
+            <td>Double Occupancy without AC and Washroom</td>
+            <td align = "center"> 2500/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with only AC</td>
+            <td align = "center"> 7500/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with only AC</td>
+            <td align = "center"> 3750/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with AC and Washroom</td>
+            <td align = "center"> 10000/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with AC and Washroom</td>
+            <td align = "center"> 5000/-</td>       
+        </tr>
+
+        <tr>
+            <td rowspan="6" style="padding: 5px;" align="center">Chennai</td>
+            <td>Single Occupancy without AC and Washroom</td>
+            <td align = "center"> 5000/-</td>
+        </tr>
+        <tr>
+            <td>Double Occupancy without AC and Washroom</td>
+            <td align = "center"> 2500/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with only AC</td>
+            <td align = "center"> 7500/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with only AC</td>
+            <td align = "center"> 3750/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with AC and Washroom</td>
+            <td align = "center"> 10000/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with AC and Washroom</td>
+            <td align = "center"> 5000/-</td>       
+        </tr>
+
+        <tr>
+            <td rowspan="6" style="padding: 5px;" align="center" >Mumbai</td>
+            <td>Single Occupancy without AC and Washroom</td>
+            <td align = "center"> 5000/-</td>
+        </tr>
+        <tr>
+            <td>Double Occupancy without AC and Washroom</td>
+            <td align = "center"> 2500/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with only AC</td>
+            <td align = "center"> 7500/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with only AC</td>
+            <td align = "center"> 3750/-</td>
+        </tr> 
+        <tr>
+            <td>Single Occupancy with AC and Washroom</td>
+            <td align = "center"> 10000/-</td>
+        </tr> 
+        <tr>
+            <td>Double Occupancy with AC and Washroom</td>
+            <td align = "center"> 5000/-</td>       
+        </tr>
+    -->
+        <tbody ng-repeat="room in rooms | filter : test">
+        <tr> 
+                <td align="center" rowspan="{{room.city.length+1}}" style="padding: 5px;">{{room.city}}</td>
+                <!--<td style="padding-left: 5px;padding-right: 5px;">{{room.Room_desc[0].room_desc}}</td>
+                <td align="center">{{room.Room_desc[0].cost}}</td>
+                -->
+            </tr>
+            <tr ng-repeat="item in room.Room_desc" ng-if="$index >=0">
+                <td style="padding-left: 5px;padding-right: 5px;">{{item.room_desc}}</td>
+                <td align="center">{{item.cost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    <div style = "display: inline-block;">
+        <a id = "register"></a>
+        <h3 id = "side">Register Now!</h3>
+        <form action = "MFoWP2.html">
+            <button type = "submit">Click to Register !</button>
+        </form>
+        <br>
+    </div> 
+    <div class = "fixed">
+        <footer>
+            <big>For further queries :
+                <a class = "email" href = "mailto:info@textaliving.in"> Send an email </a>
+            </big>
+            <br><br>
+            <button type = "button"     onclick="getLocation()">Get Current Location</button>
+            <p id="coordinate"></p>
+            <p id="json"></p> -->
+            <script>
+                var x = document.getElementById("coordinate");
+                var y = document.getElementById("json");
+                function getLocation() 
+                {
+                    if(navigator.geolocation)
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    else
+                        alert("Geolocation is not supported by this browser.");
+                }
+                function showPosition(position) 
+                {
+                    alert("Latitude : " + position.coords.latitude +", Longitude : " + position.coords.longitude);
+                    //Create query for the API.
+                    var latitude = "latitude=" + position.coords.latitude;
+                    var longitude = "&longitude=" + position.coords.longitude;
+                    var query = latitude + longitude + "&localityLanguage=en";
+                    const Http = new XMLHttpRequest();
+                    var bigdatacloud_api = "https://api.bigdatacloud.net/data/reverse-geocode-client?";
+                    bigdatacloud_api += query;
+                    Http.open("GET", bigdatacloud_api);
+                    Http.send();
+                    Http.onreadystatechange = processRequest;
+                    function processRequest(e) 
+                    {
+                        if (Http.readyState == 4 && Http.status == 200) 
+                        {
+                            var myObj = JSON.parse(Http.responseText);
+                            console.log(myObj);
+                            alert(" City : " + myObj.localityInfo.administrative[3].name + ",\n State : " + myObj.principalSubdivision + ",\n Country : " + myObj.countryName +".");
+                        }
+                    };
+                }
+            </script>   
+        </footer>
+    </div>
+</body>    
+</html>

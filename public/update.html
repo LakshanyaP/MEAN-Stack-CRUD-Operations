@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td 
+            {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            /* body
+            {
+                background-image: url("Media/background3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            } */
+            .box1
+            {
+                background-color: #808080;
+                margin-left: 400px;
+                margin-top: 75px;
+                border-radius: 20px;
+                padding-top: 50px;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-bottom: 30px;
+                height: 350px;
+                width: 600px;
+                position: relative;
+            }
+            .box2, .box3{
+            margin-left: 150px;
+            display: inline;
+            }
+            button, #submit{
+                font-family: Sofia;
+                font-size: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    </head>
+    <body>
+        <!-- <script src="form_lab4.js"></script> -->
+        <h1 align = 'center' style= 'color:black; font-family:Sofia; font-weight: lighter;'>{{message}}</h1>
+        <div class = "box1" ng-app="myApp" ng-controller="myCtrl">
+            <form method="POST" onsumbit="return validate_upd();" action="http://localhost:3000/update">
+                <label for="id">Enter the mobile number of the person to be updated : </label>
+                <input type = "text" name = "id" id="id" ng-model="id" required/>
+                <br><br>
+
+                <label for = "fname">First Name : </label>
+                <input type = "text" name = "fname"  id = "fname" style = "width:160px" placeholder = "Mark" ng-model="fname" required/>
+                &emsp;
+
+                <label for = "lname">Last Name : </label>
+                <input type = "text" name = "lname"  id = "lname" style = "width:160px" placeholder = "Sully" ng-model="lname" required/>
+                <br><br>
+
+                <label for="email" class="label">Enter Email : </label>
+                <input type = "email" name = "email"  id = "email" style="width:160px" placeholder = "example123@mail.com" ng-model="email" required/>
+                <br><br>
+
+                <label for = "password">Enter Password : </label> 
+                <input type = "password" name = "password" id = "password" style = "width:160px" ng-model="password" required/>  
+                <br><br>
+
+                <label for = "phone">Enter Mobile Number : </label>
+                <input type = "tel" name = "phone" id = "phone" style = "width:160px" placeholder = "1234512345" ng-model="phone" required/>
+                <br><br>
+
+                <label for = "gender">Select Gender :</label>
+                <input type = "radio" name = "gender" id = "gendermale" value = "male" ng-model="gender" required/>       
+                <label for = "gendermale">Male</label>  
+                <input type = "radio" name = "gender" id = "genderfemale" value = "female" ng-model="gender"/>  
+                <label for = "genderfemale">Female</label> 
+                <input type = "radio" name = "gender"  id = "genderother" value = "other"ng-model="gender" />  
+                <label for = "genderother">Other</label> 
+                <br><br>
+
+                <label for = "city">Select City : </label>
+                <select name = "city" id = "city" style = "width:160px" required>  
+                    <option value = "hyderabad">Hyderabad</option>  
+                    <option value = "chennai">Chennai</option>  
+                    <option value = "bangalore">Bangalore</option>  
+                    <option value = "mumbai">Mumbai</option>   
+                </select>  
+                <br><br>
+
+                <div class = "box2">
+                    <button type = "reset">Reset</button>
+                </div>
+
+                <div class = "box3">
+                    <input id = "submit" type = "submit" value="Update">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

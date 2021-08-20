@@ -1,0 +1,29 @@
+html 
+head 
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Sofia")
+body
+h1(align='center', style='color:black;font-family:Sofia;font-weight: lighter;') {{message}}
+div(style='background-color:#A9A9A9;margin-left: 400px;margin-top: 75px;border-radius: 20px;padding-top: 50px;padding-left: 50px;padding-right: 50px;padding-bottom: 30px;height: 300px;width: 600px;')
+    table(style='border-collapse:collapse;padding-left: 5px;padding-right: 5px;', border='1')
+        tr
+            th First Name  
+            th Last Name  
+            th Email 
+            th Phone Number
+            th Gender 
+            th City  
+
+        each user in result
+            tr
+                td. 
+                    #{user.fname}
+                td.
+                    #{user.lname}
+                td.
+                    #{user.email} 
+                td.
+                    #{user.phoneno}
+                td.
+                    #{user.gender} 
+                td. 
+                    #{user.city}
